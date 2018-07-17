@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+    <div>
+        <h3>New person adding</h3>
+        <form method="post" action="">
+            <input type="hidden" value="@ViewBag.PersonId" name="PersonId" />
+            <input type="hidden" value="@ViewBag.DepartmentId" name="DepartmentId" />
+            <table>
+                <tr><td><p>write the name</p></td>
+                    <td><input type="text" name="Name" /> </td></tr>
+                <tr><td><p>write the Last name</p></td><td> 
+                    <input type="text" name="LastName" /> </td></tr>
+                <tr><td><p>write the Father's name</p></td><td> 
+                    <input type="text" name="FatherName" /> </td></tr>
+                <tr><td><p>choose day of birth</p></td><td> 
+                    <input type="date" name="BirthDate" /> </td></tr>
+                <tr><td><input type="submit" value="save" /> </td><td></td></tr>
+            </table>
+            <a href="/Home/All_person">All person list</a>
+        </form>
+    </div>

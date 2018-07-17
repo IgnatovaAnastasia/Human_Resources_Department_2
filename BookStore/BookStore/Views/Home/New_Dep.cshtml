@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+<div>
+    <h3>New department adding</h3>
+    <form method="post" action="">
+        <input type="hidden" value="@ViewBag.Id" name="Id" />
+        <table>
+            <tr><td><p>write the name</p></td>
+                <td><input type="text" name="Name" /> </td>
+            </tr>
+            <tr>
+                <td><p>write the ID</p></td>
+                <td><input type="text" name="Id" /> </td>
+            </tr>
+            <tr><td><input type="submit" value="save" /> </td><td></td></tr>
+        </table>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h3>Human Resources Department</h3>
+    <table>
+        <tr class="header"><td><p>Number</p></td>
+            <td><p>Department name</p></td>
+            <td></td>
+        </tr>
+        @foreach (var b in ViewBag.Departments)
+        {
+            <tr>
+                <td><p>@b.Id</p></td>
+                <td><p>@b.Name</p></td>
+                <td><p><a href="/Home/Save/@b.Id">Add a person to this department</a></p></td>
+            </tr>
+        }
+    </table>
+    <a href="/Home/New_Dep">Add a new department</a>
+</div>

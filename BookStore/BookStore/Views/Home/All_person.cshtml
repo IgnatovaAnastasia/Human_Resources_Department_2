@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>All_person</title>
+</head>
+<body>
+<div>
+    <h3>All persons of department</h3>
+    <table>
+        <tr class="header">
+            <td><p>person ID</p></td>
+            <td><p>Name</p></td>
+            <td><p>Last name</p></td>
+            <td><p>Father's name</p></td>
+            <td><p>Day of Birth</p></td>
+            <td><p>Department code</p></td>
+        </tr>
+        @foreach (var b in ViewBag.Persons)
+        {
+            <tr>
+                <td><p>@b.PersonId</p></td>
+                <td><p>@b.Name</p></td>
+                <td><p>@b.LastName</p></td>
+                <td><p>@b.FatherName</p></td>
+                <td><p>@b.BirthDate</p></td>
+                <td><p>@b.DepartmentId</p></td>
+            </tr>
+        }
+    </table>
+    <a href="/Home">Return to star page</a>
+</div>
+</body>
+</html>

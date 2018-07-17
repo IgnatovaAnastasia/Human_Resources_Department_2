@@ -1,0 +1,38 @@
+﻿body {
+    font-size: 15pt;
+    font-family: "Verdana", sans-serif;
+    background-color: #e4e4e4;
+    border: groove;
+    overflow: visible;
+}
+  
+nav{
+    display: block;
+}
+  
+.menu {
+    padding-left:10px;
+}
+.menu ul {
+    list-style:none;
+}
+.menu li {
+    display:inline;
+}
+.menu a:hover {
+    color:red;
+}
+table {
+    vertical-align:middle;
+    text-align:left;  
+}
+.header {
+    font-weight:bold;
+}
+td {
+    padding-right: 10px;
+    color: #474780;
+}
+input {
+    width: 150px;
+}
