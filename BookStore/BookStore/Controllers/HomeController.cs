@@ -62,19 +62,12 @@ namespace BookStore.Controllers
                 db.SaveChanges();
                 return newD.Name + " added to db sucassefully";
         }
-        /*using(DepartmentContext db = new DepartmentContext())
-        {
-            System.Data.SqlClient.SqlParameter param2 = new System.Data.SqlClient.SqlParameter("@Id", "@5");
-            var person = db.Database.SqlQuery<Person>("SELECT * FROM Persons WHERE Id LIKE @Id", param2);
-            foreach (var phone in person)
-                Console.WriteLine(person.Name);
-        }*/
-
+        
         [HttpGet]
-        public ActionResult All_person()
+        public ActionResult All_person(int id)
         {
-            IEnumerable<Person> persons = db.Persons;
-            // передаем все объекты в динамическое свойство Department в ViewBag
+            IEnumerable<Person> persons = db.Persons.Where(pers=>pers.DepartmentId==id);
+            // передаем все объекты в динамическое свойство Person в ViewBag
             ViewBag.Persons = persons;
             // возвращаем представление
             return View();
