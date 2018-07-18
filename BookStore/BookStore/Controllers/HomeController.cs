@@ -30,19 +30,13 @@ namespace BookStore.Controllers
         [HttpPost]
         public string Save(Person somebody)
         {
-            //somebody.Date = DateTime.Now;
-            // добавляем информацию о person в базу данных
-            /*if (somebody.Name == "" || somebody.LastName == "" || somebody.Date.IsNull)
-                return "Not all fields are filled in";
-            else*/
-            {
-                somebody.PersonId = 88;
-                //somebody.BirthDate = DateTime.Today;
-                db.Persons.Add(somebody);
-                // сохраняем в бд все изменения
-                db.SaveChanges();
-                return somebody.Name + " " + somebody.LastName + " added to db sucassefully";
-            }
+            IEnumerable<Person> persons = db.Persons;
+            //к кол-ву персон в отделе прибавить 1
+            somebody.PersonId = persons.Count(pers => pers.DepartmentId == somebody.DepartmentId)+1;
+            db.Persons.Add(somebody);
+            // сохраняем в бд все изменения
+            db.SaveChanges();
+            return somebody.Name + " " + somebody.LastName + " added to db sucassefully";
         }
         //New_Dep
         [HttpGet]
@@ -53,14 +47,17 @@ namespace BookStore.Controllers
         [HttpPost]
         public string New_Dep(Department newD)
         {
-            /*if (new_d.Name == "")
-                return "Not all fields are filled in";
-            else*/
-
-               db.Departments.Add(newD);
+            IEnumerable<Department> departments = db.Departments;
+            if (departments.Count(dep => dep.Id == newD.Id) == 0)
+            {
+                db.Departments.Add(newD);
                 // сохраняем в бд все изменения
                 db.SaveChanges();
                 return newD.Name + " added to db sucassefully";
+            }
+            else
+                return "the Id is incorrect";
+
         }
         
         [HttpGet]

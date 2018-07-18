@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.SqlTypes;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,7 @@ namespace BookStore.Models
     public class Person
     {
         // person ID 
+        [Key]
         public int PersonId { get; set; }
         // имя и фамилия
         [StringLength(200)]
@@ -21,7 +23,7 @@ namespace BookStore.Models
         // Day of birth
         public DateTime BirthDate { get; set; }
         // department ID 
-        [Key]
+        [ForeignKey("Id")]
         public int DepartmentId { get; set; }
     }
 }
