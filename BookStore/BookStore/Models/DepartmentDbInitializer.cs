@@ -6,7 +6,7 @@ using System.Data.Entity;
 
 namespace BookStore.Models
 {
-    public class DepartmentDbInitializer : DropCreateDatabaseAlways<DepartmentContext> //DropCreateDatabaseIfModelChanges<DepartmentContext>
+    public class DepartmentDbInitializer : DropCreateDatabaseIfModelChanges<DepartmentContext>
     {
         protected override void Seed(DepartmentContext db)
         {

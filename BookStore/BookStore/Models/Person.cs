@@ -22,8 +22,10 @@ namespace BookStore.Models
         public string FatherName { get; set; }
         // Day of birth
         public DateTime BirthDate { get; set; }
-        // department ID 
-        [ForeignKey("Id")]
         public int DepartmentId { get; set; }
+
+        // department ID 
+        [ForeignKey("DepartmentId")]
+        public Department Department { get; set; }
     }
 }

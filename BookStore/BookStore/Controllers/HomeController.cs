@@ -63,7 +63,7 @@ namespace BookStore.Controllers
         [HttpGet]
         public ActionResult All_person(int id)
         {
-            IEnumerable<Person> persons = db.Persons.Where(pers=>pers.DepartmentId==id);
+            IEnumerable<Person> persons = db.Persons.Where(pers => pers.DepartmentId == id);
             // передаем все объекты в динамическое свойство Person в ViewBag
             ViewBag.Persons = persons;
             // возвращаем представление
