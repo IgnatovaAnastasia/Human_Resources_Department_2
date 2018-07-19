@@ -12,6 +12,11 @@ namespace BookStore.Controllers
         // создаем контекст данных
         DepartmentContext db = new DepartmentContext();
 
+        public IEnumerable<Person> GetPersons()
+        {
+            return db.Persons;
+        }
+
         public ActionResult Index()
         {
             // получаем из бд все объекты Department
